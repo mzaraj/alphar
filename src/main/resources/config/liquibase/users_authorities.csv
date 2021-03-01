@@ -1,0 +1,4 @@
+user_id;authority_name
+1;ROLE_ADMIN
+2;ROLE_USERLOG
+3;ROLE_USER

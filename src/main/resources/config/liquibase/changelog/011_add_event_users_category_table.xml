@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <property name="autoIncrement" value="true" dbms="mysql,h2,postgresql,oracle"/>
+
+    <changeSet id="011_add_event_users_category" author="mzarajczyk">
+
+        <createTable tableName="event_user">
+
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="event_id" type="bigint">
+            <constraints nullable="false"/>
+            </column>
+
+            <column name="user_id" type="bigint">
+                <constraints  nullable="false"/>
+            </column>
+        </createTable>
+
+        <addForeignKeyConstraint baseColumnNames="event_id"
+                                 baseTableName="event_user"
+                                 constraintName="fk_event_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="events"/>
+
+        <addForeignKeyConstraint baseColumnNames="user_id"
+                                 baseTableName="event_user"
+                                 constraintName="fk_user_event_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"/>
+
+    </changeSet>
+</databaseChangeLog>

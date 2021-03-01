@@ -1,0 +1,4 @@
+id;login;password_hash;first_name;last_name;email;active;lang_key;created_by;last_modified_by
+1;admin;$2a$10$gSAhZrxMllrbgj/kkK9UceBPpChGWJA7SYIb1Mqo.n5aNLq1/oRrC;Jan;Kowalski;admin@localhost;true;pl;system;systemooo
+2;userlog;$2a$10$gSAhZrxMllrbgj/kkK9UceBPpChGWJA7SYIb1Mqo.n5aNLq1/oRrC;UserLog;UserLog;userlog@localhost;true;pl;system;system
+3;user;$2a$10$gSAhZrxMllrbgj/kkK9UceBPpChGWJA7SYIb1Mqo.n5aNLq1/oRrC;Marek;Kozlowski;mareczek@fajny.pl;true;pl;system;system

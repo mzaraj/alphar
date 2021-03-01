@@ -1,0 +1,38 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./src/main/webapp",
+    "outDir": "./target/www/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "target": "es5",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2017",
+      "dom"
+    ],
+    "paths": {
+      "@app/*": [
+        "app/*",
+        "!app/components/*"
+      ],
+      "@component/*": [
+        "app/components/*"
+      ],
+      "@directives/*": [
+        "app/directives/*"
+      ],
+      "@model/*": [
+        "models/*"
+      ],
+      "@env/*": [
+        "environments/*"
+      ]
+    }
+  }
+}

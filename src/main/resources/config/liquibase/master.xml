@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <include file="config/liquibase/changelog/001_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/002_insert_user_role.xml" relativeToChangelogFile="false"/>
+<!---->
+    <include file="config/liquibase/changelog/003_change_persistent_audit_event_table.xml" relativeToChangelogFile="false"/>
+<!---->
+    <include file="config/liquibase/changelog/004_delete_fk_on_persistent_audit_event.xml" relativeToChangelogFile="false"/>
+<!---->
+    <include file="config/liquibase/changelog/005_add_avatar_column_to_user_table.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/006_refactor_audit_table_persistent_audit_event_table.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/007_add_login_attempts_column_to_user_table.xml" relativeToChangelogFile="false"/>
+<!---->
+<!---->
+    <include file="config/liquibase/changelog/008_change_entity_in_audit_table.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/009_add_category_table1.xml" relativeToChangelogFile="false"/>
+<!---->
+    <include file="config/liquibase/changelog/010_add_event_table.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/011_add_event_users_category_table.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/012_insert_category.xml" relativeToChangelogFile="false"/>
+
+
+    <include file="config/liquibase/changelog/013_insert_events.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/014_insert_members.xml" relativeToChangelogFile="false"/>
+
+</databaseChangeLog>

@@ -1,0 +1,8 @@
+
+ ___        ____         ___
+|   | |    |    | |   | |   |
+|---| |    |----' |---| |---|
+|   | |__  |      |   | |   |
+
+Running Spring Boot ${spring-boot.version}
+Starting application ${spring.application.name} with profile: ${spring.profiles.active}

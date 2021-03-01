@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <property name="autoIncrement" value="true" dbms="mysql,h2,postgresql,oracle"/>
+
+    <changeSet id="010_add_event_table" author="mzarajczyk">
+
+        <createTable tableName="events">
+
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+
+            <column name="name" type="varchar(100)"> </column>
+
+
+            <column name="city" type="varchar(1000)">
+            </column>
+
+
+            <column name="place_id" type="varchar(300)">
+            </column>
+
+
+            <column name="description" type="varchar(200)">
+            </column>
+
+
+            <column name="date" type="timestamp">
+            </column>
+
+
+            <column name="author" type="bigint">
+            </column>
+
+
+            <column name="category_id" type="bigint">
+            </column>
+
+
+        </createTable>
+
+
+        <addForeignKeyConstraint baseColumnNames="author"
+                                 baseTableName="events"
+                                 constraintName="fk_event_author"
+                                 referencedColumnNames="id"
+                                 referencedTableName="users"/>
+
+        <addForeignKeyConstraint baseColumnNames="category_id"
+                                 baseTableName="events"
+                                 constraintName="fk_event_entity"
+                                 referencedColumnNames="id"
+                                 referencedTableName="category"/>
+
+    </changeSet>
+</databaseChangeLog>

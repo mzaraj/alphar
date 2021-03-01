@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet author="zarajczykm" id="006_refactor_audit_table_persistent_audit_event_table">
+
+        <dropColumn catalogName="changelog"
+                    columnName="user_id"
+                    tableName="persistent_audit_event"/>
+
+        <dropTable cascadeConstraints="true"
+                   catalogName="changelog"
+                   tableName="persistent_audit_evt_data"/>
+
+        <renameColumn catalogName="changelog"
+                      columnDataType="varchar(30)"
+                      newColumnName="entity_name"
+                      oldColumnName="event_type"
+                      tableName="persistent_audit_event"/>
+
+        <addColumn catalogName="changelog"
+                   tableName="persistent_audit_event">
+            <column name="event_type" type="varchar(30)"/>
+        </addColumn>
+
+        <addColumn catalogName="changelog"
+                   tableName="persistent_audit_event">
+            <column name="entity" type="varchar(20)"/>
+        </addColumn>
+
+
+    </changeSet>
+
+</databaseChangeLog>

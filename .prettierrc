@@ -1,0 +1,9 @@
+{
+   "useTabs": false,
+   "printWidth": 140,
+   "tabWidth": 4,
+   "singleQuote": true,
+   "jsxBracketSameLine": false,
+   "parser": typescript,
+   "arrowParens": avoid
+}

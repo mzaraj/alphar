@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <changeSet id="002_insert_user_role" author="mzarajczyk">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(name)
+                from authorities
+            </sqlCheck>
+        </preConditions>
+        <insert tableName="authorities">
+            <column name="name">ROLE_USER</column>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>

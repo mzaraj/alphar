@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <property name="clob.type" value="clob" dbms="hsqldb"/>
+    <property name="clob.type" value="varchar(2147483647)" dbms="h2"/>
+    <property name="clob.type" value="longtext" dbms="mysql"/>
+    <property name="clob.type" value="text" dbms="postgresql"/>
+
+    <changeSet author="zarajczykm" id="005_add_avatar_column_to_user_table">
+        <addColumn catalogName="changelog"
+                   tableName="users">
+            <column name="avatar" type="${clob.type}"/>
+        </addColumn>
+    </changeSet>
+
+
+
+</databaseChangeLog>
